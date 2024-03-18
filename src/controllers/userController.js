@@ -44,7 +44,7 @@ const forgotPassword = async (req, res) => {
 
         await user.save();
 
-        const resetUrl = `http://localhost:5173/reset-password/${resetToken}`;
+        const resetUrl = `https://passwordresetbysathish.netlify.app/reset-password/${resetToken}`;
         const subject = 'Password Reset Request';
         const text = `Click the following link to reset your password: ${resetUrl}`;
 
