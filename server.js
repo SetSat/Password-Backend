@@ -3,16 +3,16 @@ const app = express()
 const mongoose = require('mongoose')
 const cors = require('cors')
  
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config({ path: './.env' });
 
 const PORT = 3000;
-const userRoutes = require('./routes/userRoutes');
+const userRoutes = require('./src/routes/userRoutes');
 const db =process.env.DB_URL
 
 app.use(express.json())
 app.use(cors())
 app.use('/api/users', userRoutes)
-console.log('Environment variables:', process.env.DB_URL);
+ 
 
 mongoose.connect(db)
     .then(() => console.log('MongoDB connected'))
